@@ -11,7 +11,7 @@ int
 sys_uv2p(void){
 
   void* vaddr;
-  if (argptr(1,(char **)&vaddr,0) < 0)
+  if (argptr(0,(char **)&vaddr,0) < 0)
     return -1;
   cprintf("vaddr = %p\n",vaddr);
   int paddr;
