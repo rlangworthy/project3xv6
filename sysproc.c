@@ -8,9 +8,41 @@
 #include "proc.h"
 
 int
-sys_uv2p(void * p){
+sys_uv2p(void){
 
+  void* vaddr;
+  if (argptr(1,&vaddr,0) < 0)
+    return -1;
+  cprintf("vaddr = %p\n",vaddr);
+  int paddr;
+  pde_t *pgdir;
+  pte_t *pgtab;
+  pde_t *pde;
+  pte_t *pte;
   
+  pushcli();
+  pgdir = (pde_t*)mycpu()->ts.cr3;
+  popcli();
+  
+  cprintf("page directory base is: %p\n",pgdir);
+  pde = &pgdir[PDX(vaddr)];
+  if(*pde & PTE_P){
+    pgtab = (pte_t*)P2V(PTE_ADDR(*pde));
+  }else{
+    cprintf("pde = %d\n",*pde);
+    cprintf("PTE_P = %d\n",PTE_P);
+    cprintf("pte not present\n");
+    return -1;
+  }
+  pte = &pgtab[PTX(vaddr)];
+  paddr = PTE_ADDR(*pte);
+  cprintf("the virtual address is %p\n",vaddr);
+  cprintf("the physical address is %d\n",paddr);
+
+  return 0;
+}
+  
+
   return -1;
 }
 
