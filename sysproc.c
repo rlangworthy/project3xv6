@@ -41,10 +41,6 @@ sys_uv2p(void){
 
   return 0;
 }
-  
-
-  return -1;
-}
 
 int
 sys_fork(void)
