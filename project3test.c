@@ -13,7 +13,7 @@
 int main(int argc, char *argv[]){
     
   char *butts = "butts";
-  uv2p((void*)buts);
+  uv2p((void*)butts);
 
   exit();
 
