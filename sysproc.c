@@ -8,6 +8,13 @@
 #include "proc.h"
 
 int
+sys_uv2p(void * p){
+
+  
+  return -1;
+}
+
+int
 sys_fork(void)
 {
   return fork();
