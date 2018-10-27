@@ -15,8 +15,6 @@ sys_uv2p(void){
     return -1;
   cprintf("vaddr = %p\n",vaddr);
   int paddr;
-  pde_t *pte; 
-  /*
   pde_t *pgdir;
   pte_t *pgtab;
   pde_t *pde;
@@ -34,8 +32,7 @@ sys_uv2p(void){
     cprintf("pte not present\n",);
     return -1;
   }
-  pte = &pgtab[PTX(vaddr)];*/
-  pte = walkpgdir(myproc()->pgdir, vaddr, 0);
+  pte = &pgtab[PTX(vaddr)];
   paddr = PTE_ADDR(*pte);
   cprintf("the virtual address is %p\n",vaddr);
   cprintf("the physical address is %d\n",paddr);
