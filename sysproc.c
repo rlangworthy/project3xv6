@@ -29,7 +29,7 @@ sys_uv2p(void){
   }else{
     cprintf("pde = %d\n",*pde);
     cprintf("PTE_P = %d\n",PTE_P);
-    cprintf("pte not present\n",);
+    cprintf("pte not present\n");
     return -1;
   }
   pte = &pgtab[PTX(vaddr)];
