@@ -14,7 +14,7 @@ sys_uv2p(void){
   if (argptr(0,(char **)&vaddr,0) < 0)
     return -1;
   cprintf("vaddr = %p\n",vaddr);
-  int paddr;
+  uint paddr;
   pde_t *pgdir;
   pte_t *pgtab;
   pde_t *pde;
@@ -37,7 +37,7 @@ sys_uv2p(void){
   cprintf("the virtual address is %p\n",vaddr);
   cprintf("the physical address is %d\n",paddr);
 
-  return paddr | PTE_FLAGS(*vaddr);
+  return paddr | PTE_FLAGS(vaddr);
 }
 
 int
