@@ -14,7 +14,8 @@ int main(int argc, char *argv[]){
     
   char *butts = "butts";
   uv2p((void*)butts);
-
+  char *dick = "Dick";
+  uv2p((void*)dick);
   exit();
 
 }
