@@ -37,7 +37,7 @@ sys_uv2p(void){
   cprintf("the virtual address is %p\n",vaddr);
   cprintf("the physical address is %d\n",paddr);
 
-  return paddr;
+  return paddr | PTE_FLAGS(*vaddr);
 }
 
 int
