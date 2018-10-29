@@ -35,7 +35,7 @@ sys_uv2p(void){
   pte = &pgtab[PTX(vaddr)];
   paddr = PTE_ADDR(*pte);
   cprintf("the virtual address is %p\n",vaddr);
-  cprintf("the physical address is %d\n",paddr);
+  cprintf("the physical address is %d\n",(paddr | PTE_FLAGS(vaddr)));
 
   return paddr | PTE_FLAGS(vaddr);
 }
