@@ -12,10 +12,10 @@
 
 int main(int argc, char *argv[]){
     
-  char *butts = "butts";
-  uv2p((void*)butts);
-  char *dick = "Dick";
-  uv2p((void*)dick);
+  char *test1 = "test1";
+  uv2p((void*)test1);
+  char *test2 = "test2";
+  uv2p((void*)test2);
   exit();
 
 }

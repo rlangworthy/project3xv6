@@ -1,0 +1,19 @@
+uv2p(3)
+
+NAME
+	uv2p -- translate virtal address to physical address
+
+SYNOPSIS
+	#include "user.h"
+
+	char*
+	uv2p(char*);
+
+DESCRIPTION
+	uv2p takes a single pointer cast to char* and returns its location in 
+	physical memory, also cast to a char*.
+
+RETURN VALUES
+	Upon successful completion it returns a pointer to the arguments location
+	 in physical memory.  Upon failure it returns a NULL pointer.
+
