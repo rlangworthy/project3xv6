@@ -1,0 +1,7 @@
+README
+
+Test partitions: valid addresses currently in physical memory - success
+				 valid addresses not currently in physical memory - fail
+				 invalid addresses in kernel vm space
+				 invalid addresses in user heap space
+				 invalid addresses in user stack space
