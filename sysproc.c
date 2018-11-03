@@ -27,7 +27,7 @@ sys_uv2p(void){
   popcli();
 
 
-  cprintf("%p | %p | %p\n",t, e, (int)pgdir);
+  cprintf("%p | %p | %p\n",&t, &e, (int)pgdir);
   cprintf("page directory base is: %p\n",pgdir);
   pde = &pgdir[PDX(vaddr)];
   if(*pde & PTE_P){
