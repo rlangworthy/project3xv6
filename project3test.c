@@ -20,6 +20,9 @@ int main(int argc, char *argv[]){
   uv2p(test3);
 
   printf(0,"%d\n", uv2p((char*)(-10)));
+  printf(0,"%d\n", uv2p((char*)(&argc)));
+  printf(0,"%d\n", uv2p((char*)(&argc - 3)));
+
   exit();
 
 }
