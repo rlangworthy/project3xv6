@@ -22,12 +22,12 @@ sys_uv2p(void){
   
   pgdir = myproc()->pgdir;
   pushcli();
-  int t = (int)(P2V(mycpu()->ts.cr3));
-  int e = (int)mycpu()->ts.cr3;
+  void* t = (void*)(P2V(mycpu()->ts.cr3));
+  void* e = (void*)mycpu()->ts.cr3;
   popcli();
 
 
-  cprintf("%d | %d | %d\n",t, e, (int)pgdir);
+  cprintf("%p | %p | %p\n",t, e, (int)pgdir);
   cprintf("page directory base is: %p\n",pgdir);
   pde = &pgdir[PDX(vaddr)];
   if(*pde & PTE_P){
