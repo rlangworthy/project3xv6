@@ -11,13 +11,15 @@
 
 
 int main(int argc, char *argv[]){
-	
+
   char *test1 = "test1";
-  uv2p((void*)test1);
+  uv2p(test1);
   char *test2 = "test2";
-  uv2p((void*)test2);
+  uv2p(test2);
   char *test3 = (char*)malloc(10);
-  uv2p((void*)test3);
+  uv2p(test3);
+
+  printf("%d\n", uv2p((char*)(-10)));
   exit();
 
 }
