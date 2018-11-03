@@ -36,7 +36,7 @@ sys_uv2p(void){
   paddr = PTE_ADDR(*pte) | PTE_FLAGS(vaddr); //PTE_FLAGS coincidentally cover the offset of the virtual address
   cprintf("the virtual address is %d\n",(int)vaddr);
   cprintf("the physical address is %d\n",paddr);
-  cprintf("ebp: %d  esp: %d\n", myproc()->tf->ebp, myproc()->tf->esp);
+  cprintf("ebp: %d  esp: %d kstack: %d\n", myproc()->tf->ebp, myproc()->tf->esp, (int)myproc()->kstack);
 
   return paddr | PTE_FLAGS(vaddr);
 }
