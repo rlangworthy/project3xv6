@@ -22,7 +22,7 @@ sys_uv2p(void){
   
   //pgdir = myproc()->pgdir;
   pushcli();
-  pgdir = (pde_t*)(mycpu()->ts.cr3);
+  pgdir = (pde_t*)(P2V(mycpu()->ts.cr3));
   popcli();
 
   cprintf("page directory base is: %p\n",pgdir);
