@@ -19,7 +19,7 @@ int main(int argc, char *argv[]){
   char *test3 = (char*)malloc(10);
   uv2p(test3);
 
-  printf("%d\n", uv2p((char*)(-10)));
+  printf(0,"%d\n", uv2p((char*)(-10)));
   exit();
 
 }
