@@ -20,8 +20,9 @@ sys_uv2p(void){
   pde_t *pde;
   pte_t *pte;
   
-  pgdir = myproc()->pgdir;
-    
+  //pgdir = myproc()->pgdir;
+  pgdir = (pde_t*)cpu->ts.cr3;
+
   cprintf("page directory base is: %p\n",pgdir);
   pde = &pgdir[PDX(vaddr)];
   if(*pde & PTE_P){
