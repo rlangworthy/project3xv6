@@ -23,7 +23,7 @@ sys_uv2p(void){
   pgdir = myproc()->pgdir;
   pushcli();
   int t = (int)(P2V(mycpu()->ts.cr3));
-  int e = (int)mycpu()->ts.cr3
+  int e = (int)mycpu()->ts.cr3;
   popcli();
 
 
