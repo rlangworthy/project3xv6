@@ -16,4 +16,5 @@ DESCRIPTION
 RETURN VALUES
 	Upon successful completion it returns a pointer to the arguments location
 	 in physical memory.  Upon failure it returns a NULL pointer.
-
+	-1 for values outside process memory
+	

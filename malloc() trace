@@ -72,10 +72,29 @@ sysproc.c:78-90
 90	}
 
 Fetches the argument from the stack via argint and stores it in n, uses that as
- the argument for growproc and returns addr, the size of the ond process memory
+ the argument for growproc and returns addr, the size of the old process memory
  and a pointer to the start of the newly allocated memory.
 
+proc.c:158-175
 
+158	int
+159	growproc(int n)
+160	{
+161	  uint sz;
+162	  struct proc *curproc = myproc();
+163
+164	  sz = curproc->sz;
+165	  if(n > 0){
+166	    if((sz = allocuvm(curproc->pgdir, sz, sz + n)) == 0)
+167	      return -1;
+168	  } else if(n < 0){
+169	    if((sz = deallocuvm(curproc->pgdir, sz, sz + n)) == 0)
+170	      return -1;
+171	  }
+172	  curproc->sz = sz;
+173	  switchuvm(curproc);
+174	  return 0;
+175	}
 
 
 
