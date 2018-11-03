@@ -16,6 +16,8 @@ int main(int argc, char *argv[]){
   uv2p((void*)test1);
   char *test2 = "test2";
   uv2p((void*)test2);
+  char *test3 = (char*)malloc(10);
+  uv2p((void*)test3);
   exit();
 
 }
