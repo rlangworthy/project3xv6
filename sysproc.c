@@ -30,7 +30,7 @@ sys_uv2p(void){
     cprintf("pde = %d\n",*pde);
     cprintf("PTE_P = %d\n",PTE_P);
     cprintf("pte not present\n");
-    return NULL;
+    return 0;
   }
   pte = &pgtab[PTX(vaddr)];
   paddr = PTE_ADDR(*pte) | PTE_FLAGS(vaddr); //PTE_FLAGS coincidentally cover the offset of the virtual address
