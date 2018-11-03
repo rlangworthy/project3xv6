@@ -12,16 +12,16 @@
 
 int main(int argc, char *argv[]){
 
-  char *test1 = "test1";
-  uv2p(test1);
-  char *test2 = "test2";
-  uv2p(test2);
-  char *test3 = (char*)malloc(10);
+  char *str1 = "test1";
+  char *str2 = "test2";
+
+  char *mem1 = (char*)malloc(10);
+  char *mem2 = (char*)malloc(10);
   uv2p(test3);
 
   printf(0,"%d\n", uv2p((char*)(-10)));
   printf(0,"%d\n", uv2p((char*)(&argc)));
-  printf(0,"%d\n", (int)(&argc -1));
+  printf(0,"%d\n", uv2p((char*)(&argc -10)));
 
   exit();
 
