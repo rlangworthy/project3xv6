@@ -17,7 +17,8 @@ int main(int argc, char *argv[]){
   	printf(0, "Test 1 success\n");
   else
 	printf(0,"Test 1 fail\n");
-  
+  printf(0, "%d %d\n", uv2p((char*)&argv), uv2p((char*)(&argc)));
+
   printf(0, "Test 2: statically allocated variables\n");
   char *str1 = "test1";
   char *str2 = "test2";
