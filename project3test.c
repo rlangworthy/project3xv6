@@ -23,8 +23,8 @@ int main(int argc, char *argv[]){
   char *str2 = "test2";
   printf(0, "%d %d\n", uv2p(str1), uv2p(str2));
 
-  char *mem1 = (char*)malloc(10);
-  char *mem2 = (char*)malloc(10);
+  //char *mem1 = (char*)malloc(10);
+  //char *mem2 = (char*)malloc(10);
   
 
   printf(0,"%d\n", uv2p((char*)(-10)));
