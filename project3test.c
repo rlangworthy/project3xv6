@@ -29,7 +29,7 @@ int main(int argc, char *argv[]){
 
   printf(0, "Test 3: out of bounds address\n");
 
-  if(uv2p((char*)(-1)) == -1)
+  if((int)uv2p((char*)(-1)) == -1)
   	printf(0, "Test 3 Success\n");
   else
   	printf(0, "Test 3 Failure\n");
