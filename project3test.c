@@ -23,11 +23,11 @@ int main(int argc, char *argv[]){
   char *mem1 = (char*)malloc(10);
   char *mem2 = (char*)malloc(10);
   
-  if(uv2p(mem2)-uv2p(mem1) == 12)
+  if(uv2p(mem2)-uv2p(mem1) == 10)
   	printf(0, "Test 2 Success\n");
   else
   	printf(0, "Test 2 Fail\n");
-  printf(0,"%d\n", uv2p((char*)(-10)));
+  printf(0,"%d %d\n", uv2p(mem1), uv2p(mem2));
 
 
   exit();
