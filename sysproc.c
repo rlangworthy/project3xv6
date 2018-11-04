@@ -13,7 +13,6 @@ sys_uv2p(void){
   void* vaddr;
   if (argptr(0,(char **)&vaddr,0) < 0)
     return -1;
-  cprintf("vaddr = %d\n",vaddr);
   uint paddr;
   pde_t *pgdir;
   pte_t *pgtab;
@@ -22,21 +21,15 @@ sys_uv2p(void){
   
   pgdir = myproc()->pgdir;
 
-  cprintf("page directory base is: %p\n",pgdir);
   pde = &pgdir[PDX(vaddr)];
   if(*pde & PTE_P){
     pgtab = (pte_t*)P2V(PTE_ADDR(*pde));
   }else{
-    //cprintf("pde = %d\n",*pde);
-    //cprintf("PTE_P = %d\n",PTE_P);
-    //cprintf("pte not present\n");
     return 0;
   }
   pte = &pgtab[PTX(vaddr)];
   paddr = PTE_ADDR(*pte) | PTE_FLAGS(vaddr); //PTE_FLAGS coincidentally cover the offset of the virtual address
-  //cprintf("the virtual address is %d\n",(int)vaddr);
-  //cprintf("the physical address is %d\n",paddr);
-  //cprintf("ebp: %d  esp: %d kstack: %d\n", myproc()->context->ebp, (int)myproc()->context, (int)myproc()->kstack);
+
 
   return paddr;
 }
