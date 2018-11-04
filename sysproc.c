@@ -13,7 +13,7 @@ sys_uv2p(void){
   void* vaddr;
   if (argptr(0,(char **)&vaddr,0) < 0)
     return -1;
-  cprintf("vaddr = %p\n",vaddr);
+  cprintf("vaddr = %d\n",vaddr);
   uint paddr;
   pde_t *pgdir;
   pte_t *pgtab;
