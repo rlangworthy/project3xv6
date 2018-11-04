@@ -21,13 +21,18 @@ int main(int argc, char *argv[]){
 
   printf(0, "Test 2: dynamically allocated variables\n");
   char *mem1 = (char*)malloc(10);
-  char *mem2 = (char*)malloc(10);
   
-  if(uv2p(mem2)-uv2p(mem1) == 10)
+  if(uv2p(mem1) > 0)
   	printf(0, "Test 2 Success\n");
   else
   	printf(0, "Test 2 Fail\n");
-  printf(0,"%d %d\n", uv2p((char*)*mem1), uv2p((char*)*mem2));
+
+  printf(0, "Test 3: out of bounds address\n")
+
+  if(uv2p(char*(-1)) == -1)
+  	printf(0, "Test 3 Success\n");
+  else
+  	printf(0, "Test 3 Failure\n");
 
 
   exit();
