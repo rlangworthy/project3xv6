@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
   else
   	printf(0, "Test 2 Fail\n");
 
-  printf(0, "Test 3: out of bounds address\n")
+  printf(0, "Test 3: out of bounds address\n");
 
   if(uv2p(char*(-1)) == -1)
   	printf(0, "Test 3 Success\n");
