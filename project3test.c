@@ -21,7 +21,7 @@ int main(int argc, char *argv[]){
 
   printf(0,"%d\n", uv2p((char*)(-10)));
   printf(0,"%d\n", uv2p((char*)(&argc)));
-  printf(0,"%d\n", uv2p((char*)(&argc -4096)));
+  printf(0,"%d\n", uv2p((char*)(&argc -1024)));
 
   exit();
 
