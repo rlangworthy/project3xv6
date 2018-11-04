@@ -20,7 +20,7 @@ int main(int argc, char *argv[]){
   printf(0, "%d %d\n", uv2p((char*)&argv), uv2p((char*)(&argc)));
 
   printf(0, "Test 2: dynamically allocated variables\n");
-  char *mem1 = (char*)malloc(10);
+  char *mem1 = (char*)malloc(5000);
   char *mem2 = (char*)malloc(10);
   
   if(uv2p(mem2)-uv2p(mem1) == 10)
