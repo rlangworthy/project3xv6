@@ -1,5 +1,33 @@
 README
 
-Test partitions: valid addresses currently in physical memory - success
-				 valid addresses not currently in physical memory - fail
-				 invalid addresses - 
+Changelog:
+
+	New Files:
+
+	project3test.c
+		Contains test data for uv2p.
+
+	p3 README
+		Contains build instructions and changelog.
+
+	uv2p man page
+		Contains the man page-style information about uv2p
+
+	Updated Files:
+
+		user.h 
+			add synopsis for user space
+		syscall.c
+			added uv2p to function pointer array/function definitions list
+		syscall.h
+			added uv2p as syscall 22
+		usys.S
+			added uv2p to connect user call to OS code
+		sysproc.c
+			added the actual code of uv2p at the top of the file
+		Makefile
+			added project3test to list of user programs
+
+Build Instructions:
+	
+	Simply run xv6 as normal.
