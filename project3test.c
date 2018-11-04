@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
   else
 	printf(0,"Test 1 fail\n");
   
-  printf(0, "Test 2: statically allocated variables\n")
+  printf(0, "Test 2: statically allocated variables\n");
   char *str1 = "test1";
   char *str2 = "test2";
   printf(0, "%d %d\n", uv2p(str1), uv2p(str2));
