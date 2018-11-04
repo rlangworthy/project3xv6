@@ -13,7 +13,7 @@
 int main(int argc, char *argv[]){
 
   printf(0, "Test 1: argc and argv\n");
-  if(uv2p((char*)&argv)-uv2p((char*)(&argc)) = 4)
+  if(uv2p((char*)&argv)-uv2p((char*)(&argc)) == 4)
   	printf(0, "Test 1 success\n");
   else
 	printf(0,"Test 1 fail\n");
